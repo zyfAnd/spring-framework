@@ -83,6 +83,12 @@ public class AnnotationConfigApplicationContext extends GenericApplicationContex
 	 * @param componentClasses one or more component classes &mdash; for example,
 	 * {@link Configuration @Configuration} classes
 	 */
+
+	/**
+	* @description:
+	 * AnnotationConfigApplicationContext
+	 * @author: Yanfu
+	 */
 	public AnnotationConfigApplicationContext(Class<?>... componentClasses) {
 		this();
 		register(componentClasses);
