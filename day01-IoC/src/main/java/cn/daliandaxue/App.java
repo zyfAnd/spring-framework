@@ -4,6 +4,8 @@ import cn.daliandaxue.config.MainConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.GenericWebApplicationContext;
 
 /**
  * @Authour Zhang Yanfu
@@ -16,6 +18,9 @@ public class App {
 		ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("");
 		classPathXmlApplicationContext.getBeanDefinitionNames();
 		ApplicationContext context = new AnnotationConfigApplicationContext(MainConfig.class);
+		WebApplicationContext webApplicationContext  = new GenericWebApplicationContext();
+
+		webApplicationContext.getBeanDefinitionNames();
 		String[] beanDefinitionNames = context.getBeanDefinitionNames();
 		for (String beanName:beanDefinitionNames) {
 			System.err.println(beanName);

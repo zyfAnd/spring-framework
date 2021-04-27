@@ -85,6 +85,11 @@ public class DefaultDocumentLoader implements DocumentLoader {
 	 * @return the JAXP DocumentBuilderFactory
 	 * @throws ParserConfigurationException if we failed to build a proper DocumentBuilderFactory
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 * 有没有 XML External Entity Injection XXE ?? 外部XML 实体注入的风险呢？
+	 */
 	protected DocumentBuilderFactory createDocumentBuilderFactory(int validationMode, boolean namespaceAware)
 			throws ParserConfigurationException {
 
