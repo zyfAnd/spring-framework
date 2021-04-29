@@ -14,6 +14,7 @@ public class App {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 		SimpleBean bean = context.getBean(SimpleBean.class);
 		bean.send();
+		//关闭容器
 		context.close();
 	}
 }
