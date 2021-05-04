@@ -73,7 +73,9 @@ public class DefaultDocumentLoader implements DocumentLoader {
 		if (logger.isTraceEnabled()) {
 			logger.trace("Using JAXP provider [" + factory.getClass().getName() + "]");
 		}
+		// 创建 DocumentBuilder 实例
 		DocumentBuilder builder = createDocumentBuilder(factory, entityResolver, errorHandler);
+		// 把 XML resource 解析转换成 Document
 		return builder.parse(inputSource);
 	}
 
@@ -88,11 +90,12 @@ public class DefaultDocumentLoader implements DocumentLoader {
 	/**
 	* @description:
 	 * @author: Yanfu
+	 * 创建 DocumentBuilderFactory 实例
 	 * 有没有 XML External Entity Injection XXE ?? 外部XML 实体注入的风险呢？
 	 */
 	protected DocumentBuilderFactory createDocumentBuilderFactory(int validationMode, boolean namespaceAware)
 			throws ParserConfigurationException {
-
+		//创建 DocumentBuilderFactory 实例
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		factory.setNamespaceAware(namespaceAware);
 

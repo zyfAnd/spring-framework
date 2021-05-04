@@ -1,5 +1,6 @@
 package cn.daliandaxue;
 
+
 import cn.daliandaxue.entity.SimpleBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

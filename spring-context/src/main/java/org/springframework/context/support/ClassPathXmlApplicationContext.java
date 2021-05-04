@@ -206,6 +206,7 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	@Override
 	@Nullable
 	protected Resource[] getConfigResources() {
+		System.out.println("ClassPathXmlLApplicationContext --> getConfigResources");
 		return this.configResources;
 	}
 
