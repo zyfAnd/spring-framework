@@ -134,12 +134,20 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 	 * @throws BeansException if context creation failed
 	 * @see #refresh()
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 * 	/
+	 * 	 * Create a new ClassPathXmlApplicationContext with the given parent,
+	 * 	 * loading the definitions from the given XML files.
+	 */
 	public ClassPathXmlApplicationContext(
 			String[] configLocations, boolean refresh, @Nullable ApplicationContext parent)
 			throws BeansException {
 
 		super(parent);
 		setConfigLocations(configLocations);
+		//if true --> refresh();
 		if (refresh) {
 			refresh();
 		}

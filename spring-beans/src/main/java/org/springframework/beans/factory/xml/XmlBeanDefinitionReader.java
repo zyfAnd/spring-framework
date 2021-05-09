@@ -526,6 +526,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 * 把 document 对象中的 bean 注册 到容器中
 	 */
 	public int registerBeanDefinitions(Document doc, Resource resource) throws BeanDefinitionStoreException {
+		//DefaultBeanDefinitionDocumentReader - 创建 DefaultBeanDefinitionDocumentReader 实例
 		BeanDefinitionDocumentReader documentReader = createBeanDefinitionDocumentReader();
 		int countBefore = getRegistry().getBeanDefinitionCount();
 		documentReader.registerBeanDefinitions(doc, createReaderContext(resource));
