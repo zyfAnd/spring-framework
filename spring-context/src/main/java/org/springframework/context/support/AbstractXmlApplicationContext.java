@@ -90,6 +90,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 
 		// Allow a subclass to provide custom initialization of the reader,
 		// then proceed with actually loading the bean definitions.
+		//默认空实现
 		initBeanDefinitionReader(beanDefinitionReader);
 		loadBeanDefinitions(beanDefinitionReader);
 	}
@@ -108,12 +109,12 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 
 	/**
 	 * Load the bean definitions with the given XmlBeanDefinitionReader.
-	 * <p>The lifecycle of the bean factory is handled by the {@link #refreshBeanFactory}
+	 * <p>The lifecycle of the bean factory is handled by the {@link #}
 	 * method; hence this method is just supposed to load and/or register bean definitions.
 	 * @param reader the XmlBeanDefinitionReader to use
 	 * @throws BeansException in case of bean registration errors
 	 * @throws IOException if the required XML document isn't found
-	 * @see #refreshBeanFactory
+	 * @see #abstract
 	 * @see #getConfigLocations
 	 * @see #getResources
 	 * @see #getResourcePatternResolver
@@ -130,7 +131,7 @@ public abstract class AbstractXmlApplicationContext extends AbstractRefreshableC
 		}
 		String[] configLocations = getConfigLocations();
 		if (configLocations != null) {
-//			AbstractBeanDefinitionReader loadBeanDefinitions
+//			AbstractXmlApplicationContext loadBeanDefinitions
 			reader.loadBeanDefinitions(configLocations);
 		}
 	}

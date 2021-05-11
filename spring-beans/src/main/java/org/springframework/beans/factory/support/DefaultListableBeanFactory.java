@@ -927,10 +927,15 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	 * @author: Yanfu
 	 * 把 beanDefinition 添加到 Map 和 List
 	 */
+	//BeanDefinitionRegistry  - registerBeanDefinition
 	@Override
 	public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition)
 			throws BeanDefinitionStoreException {
-//* 把 beanDefinition 添加到 Map 和 List
+		/**
+		* @description:
+		 * @author: Yanfu
+		 */
+		//* 把 beanDefinition 添加到 Map 和 List
 		Assert.hasText(beanName, "Bean name must not be empty");
 		Assert.notNull(beanDefinition, "BeanDefinition must not be null");
 

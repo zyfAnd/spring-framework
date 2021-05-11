@@ -39,4 +39,5 @@ rootProject.children.each {project ->
 include 'day01-IoC'
 include 'yanfu-spring-core'
 include 'yanfu-mvc'
+include 'yanfu-spring-core-annotation'
 

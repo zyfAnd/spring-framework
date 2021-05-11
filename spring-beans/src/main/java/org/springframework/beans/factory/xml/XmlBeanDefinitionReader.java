@@ -305,6 +305,11 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 * @return the number of bean definitions found
 	 * @throws BeanDefinitionStoreException in case of loading or parsing errors
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 */
+	//
 	@Override
 	public int loadBeanDefinitions(Resource resource) throws BeanDefinitionStoreException {
 		return loadBeanDefinitions(new EncodedResource(resource));
@@ -529,7 +534,15 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 		//DefaultBeanDefinitionDocumentReader - 创建 DefaultBeanDefinitionDocumentReader 实例
 		BeanDefinitionDocumentReader documentReader = createBeanDefinitionDocumentReader();
 		int countBefore = getRegistry().getBeanDefinitionCount();
+		/**
+		* @description:
+		 * @author: Yanfu
+		 */
+//		DefaultBeanDefinitionDocumentReader - registerBeanDefinitions
+//		-->DefaultBeanDefinitionDocumentReader -doRegisterBeanDefinitions
+		//注入到 Map / List 的实际实现 protected void doRegisterBeanDefinitions(Element root)
 		documentReader.registerBeanDefinitions(doc, createReaderContext(resource));
+//		BeanDefinitionRegistry registry  - getBeanDefinitionCount
 		return getRegistry().getBeanDefinitionCount() - countBefore;
 	}
 

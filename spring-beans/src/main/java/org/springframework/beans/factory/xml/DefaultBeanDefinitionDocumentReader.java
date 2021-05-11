@@ -90,9 +90,19 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	 * <p>Opens a DOM Document; then initializes the default settings
 	 * specified at the {@code <beans/>} level; then parses the contained bean definitions.
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 * XmlBeanDefinitionReader registerBeanDefinitions --> DefaultBeanDefinitionDocumentReader.registerBeanDefinitions
+	 */
 	@Override
 	public void registerBeanDefinitions(Document doc, XmlReaderContext readerContext) {
 		this.readerContext = readerContext;
+		/**
+		* @description:
+		 * @author: Yanfu
+		 *  this.doRegisterBeanDefinitions
+		 */
 		doRegisterBeanDefinitions(doc.getDocumentElement());
 	}
 
@@ -116,6 +126,11 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 
 	/**
 	 * Register each bean definition within the given root {@code <beans/>} element.
+	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 *  XmlBeanDefinitionReader
 	 */
 	@SuppressWarnings("deprecation")  // for Environment.acceptsProfiles(String...)
 	protected void doRegisterBeanDefinitions(Element root) {
@@ -151,6 +166,8 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 		 * @author: Yanfu
 		 */
 		//注册 Bean
+		//parseDefaultElement
+		//processBeanDefinition 实际实现 注入 bean
 		parseBeanDefinitions(root, this.delegate);
 
 		postProcessXml(root);
@@ -171,6 +188,11 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	 * "import", "alias", "bean".
 	 * @param root the DOM root element of the document
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 * 解析根元素
+	 */
 	protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate delegate) {
 		if (delegate.isDefaultNamespace(root)) {
 			NodeList nl = root.getChildNodes();
@@ -179,6 +201,11 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 				if (node instanceof Element) {
 					Element ele = (Element) node;
 					if (delegate.isDefaultNamespace(ele)) {
+						/**
+						* @description:
+						 * @author: Yanfu
+						 *
+						 */
 						parseDefaultElement(ele, delegate);
 					}
 					else {
@@ -193,13 +220,20 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 	}
 
 	private void parseDefaultElement(Element ele, BeanDefinitionParserDelegate delegate) {
+		//import 标签
 		if (delegate.nodeNameEquals(ele, IMPORT_ELEMENT)) {
 			importBeanDefinitionResource(ele);
 		}
+		//alias 标签
 		else if (delegate.nodeNameEquals(ele, ALIAS_ELEMENT)) {
 			processAliasRegistration(ele);
 		}
+		// bean 标签
 		else if (delegate.nodeNameEquals(ele, BEAN_ELEMENT)) {
+			/**
+			* @description:
+			 * @author: Yanfu
+			 */
 			processBeanDefinition(ele, delegate);
 		}
 		else if (delegate.nodeNameEquals(ele, NESTED_BEANS_ELEMENT)) {
@@ -314,6 +348,13 @@ public class DefaultBeanDefinitionDocumentReader implements BeanDefinitionDocume
 			bdHolder = delegate.decorateBeanDefinitionIfRequired(ele, bdHolder);
 			try {
 				// Register the final decorated instance.
+				/**
+				* @description:
+				 * @author: Yanfu
+				 * BeanDefinitionRegistry
+				 * implemented class DefaultListableBeanFactory   registerBeanDefinition
+				 */
+				//getReaderContext().getRegistry()  -- DefaultListableBeanFactory
 				BeanDefinitionReaderUtils.registerBeanDefinition(bdHolder, getReaderContext().getRegistry());
 			}
 			catch (BeanDefinitionStoreException ex) {

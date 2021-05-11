@@ -180,6 +180,11 @@ public abstract class AbstractBeanDefinitionReader implements BeanDefinitionRead
 	}
 
 
+	/**
+	* @description:
+	 * @author: Yanfu
+	 */
+	//AbstractXmlApplicationContext (XmlBeanDefinitionReader)reader.loadBeanDefinitions(configLocations);
 	@Override
 	public int loadBeanDefinitions(Resource... resources) throws BeanDefinitionStoreException {
 		Assert.notNull(resources, "Resource array must not be null");
