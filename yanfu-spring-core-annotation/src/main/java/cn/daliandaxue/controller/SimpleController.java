@@ -10,4 +10,9 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class SimpleController {
+
+
+    public void destroy(){
+        System.out.println("destroy..");
+    }
 }

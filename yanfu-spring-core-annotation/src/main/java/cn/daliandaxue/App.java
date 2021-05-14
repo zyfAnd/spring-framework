@@ -1,5 +1,7 @@
 package cn.daliandaxue;
 
+import cn.daliandaxue.dao.SimpleDao;
+import cn.daliandaxue.entity.SimpleBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -10,6 +12,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class App {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("cn.daliandaxue");
+        SimpleDao simeplDao = context.getBean("simpleDao", SimpleDao.class);
+        System.out.println(simeplDao);
+        context.close();
     }
 }
