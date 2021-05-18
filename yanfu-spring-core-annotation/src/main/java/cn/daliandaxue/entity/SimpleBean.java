@@ -10,4 +10,10 @@ public class SimpleBean {
     public void send(){
         System.out.println("I am simple bean send...");
     }
+    public void init(){
+        System.out.println("SimpleBean init..");
+    }
+    public void destroy(){
+        System.out.println("SimpleBean Destroy..");
+    }
 }

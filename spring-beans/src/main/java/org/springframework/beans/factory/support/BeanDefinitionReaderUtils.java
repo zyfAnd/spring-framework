@@ -54,19 +54,29 @@ public abstract class BeanDefinitionReaderUtils {
 	 * @return the bean definition
 	 * @throws ClassNotFoundException if the bean class could not be loaded
 	 */
+	/**
+	* @description:
+	 * @author: Yanfu
+	 * 通过class 全限定名来创建一个 GenericBeanDefinition
+	 */
 	public static AbstractBeanDefinition createBeanDefinition(
 			@Nullable String parentName, @Nullable String className, @Nullable ClassLoader classLoader) throws ClassNotFoundException {
 
 		GenericBeanDefinition bd = new GenericBeanDefinition();
+		//set parent Name
 		bd.setParentName(parentName);
 		if (className != null) {
 			if (classLoader != null) {
+				//Class.forName 创建出这个类的clazz ， 然后 设置 clazz 到 bean definition
+				//已经类加载器
 				bd.setBeanClass(ClassUtils.forName(className, classLoader));
 			}
 			else {
+				//Class.forName 创建出这个类的clazz ， 然后 设置 clazz 到 bean definition
 				bd.setBeanClassName(className);
 			}
 		}
+		//此时 类还没实例化 只是创建出类的类型 clazz
 		return bd;
 	}
 

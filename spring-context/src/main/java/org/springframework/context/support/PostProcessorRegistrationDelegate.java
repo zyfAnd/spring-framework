@@ -219,6 +219,10 @@ final class PostProcessorRegistrationDelegate {
 			}
 		}
 
+		/**
+		* @description:
+		 * @author: Yanfu
+		 */
 		// First, register the BeanPostProcessors that implement PriorityOrdered.
 		sortPostProcessors(priorityOrderedPostProcessors, beanFactory);
 		registerBeanPostProcessors(beanFactory, priorityOrderedPostProcessors);

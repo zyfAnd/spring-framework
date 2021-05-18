@@ -40,7 +40,7 @@ import org.springframework.lang.Nullable;
  * @see org.springframework.context.support.AbstractApplicationContext#getBeanFactory()
  */
 public interface ConfigurableListableBeanFactory
-		extends ListableBeanFactory, AutowireCapableBeanFactory, ConfigurableBeanFactory {
+		extends ListableBeanFactory,AutowireCapableBeanFactory, ConfigurableBeanFactory {
 
 	/**
 	 * Ignore the given dependency type for autowiring:
