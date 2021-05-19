@@ -415,7 +415,7 @@ public class BeanDefinitionParserDelegate {
 		/**
 		* @description:
 		 * @author: Yanfu
-		 * jiexi  bean 的属性节点
+		 * 解析 bean 的属性节点
 		 */
 		// bean id
 		String id = ele.getAttribute(ID_ATTRIBUTE);
@@ -441,6 +441,11 @@ public class BeanDefinitionParserDelegate {
 			checkNameUniqueness(beanName, aliases, ele);
 		}
 
+		/**
+		* @description:
+		 * @author: Yanfu
+		 * 通过element 解析 bean definition
+		 */
 		AbstractBeanDefinition beanDefinition = parseBeanDefinitionElement(ele, beanName, containingBean);
 		if (beanDefinition != null) {
 			if (!StringUtils.hasText(beanName)) {
@@ -525,7 +530,7 @@ public class BeanDefinitionParserDelegate {
 		}
 
 		try {
-			//创建一个 Bean Definition
+			//通过 class 类全限定类名 创建一个 Bean Definition
 			AbstractBeanDefinition bd = createBeanDefinition(className, parent);
 
 			parseBeanDefinitionAttributes(ele, beanName, containingBean, bd);
