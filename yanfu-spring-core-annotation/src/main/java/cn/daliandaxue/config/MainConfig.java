@@ -20,6 +20,7 @@ public class MainConfig {
      */
     @Bean(initMethod = "init", destroyMethod = "destroy")
     SimpleBean getSimpleBean(){
+
         return new SimpleBean();
     }
 }

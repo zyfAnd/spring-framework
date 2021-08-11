@@ -254,6 +254,11 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 		doScan(basePackages);
 
 		// Register annotation config processors, if necessary.
+		/**
+		* @description:
+		 * @author: Yanfu
+		 * 注册 注解配置的 processor
+		 */
 		if (this.includeAnnotationConfig) {
 			AnnotationConfigUtils.registerAnnotationConfigProcessors(this.registry);
 		}

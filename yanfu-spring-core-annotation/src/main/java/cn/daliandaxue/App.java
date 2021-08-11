@@ -17,6 +17,8 @@ public class App {
         SimpleDao simeplDao = context.getBean("simpleDao", SimpleDao.class);
         System.out.println(simeplDao);
         context.close();
+        String str = "HAHA";
+        str.replace("","");
 
 //
 //        try {

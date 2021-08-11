@@ -2,6 +2,8 @@ package cn.daliandaxue.dao;
 
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.PreDestroy;
+
 /**
  * @Authour Zhang Yanfu
  * @Date 2021/5/11 10:56 上午
@@ -10,6 +12,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class SimpleDao {
+
+    public SimpleDao() {
+        System.out.println("SimpleDao");
+    }
+
 
 
 
