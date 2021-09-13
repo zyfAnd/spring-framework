@@ -522,6 +522,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 			prepareRefresh();
 
 			// Tell the subclass to refresh the internal bean factory.
+//			org.springframework.beans.factory.support.DefaultListableBeanFactory@4b44655e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,mainConfig,simpleController,simpleDao,person,myBeanPostProcessor,getSimpleBean]; root of factory hierarchy
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
@@ -892,6 +893,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 		// Instantiate all remaining (non-lazy-init) singletons.
 		//创建 Bean 实例 （非懒加载的）
+//		org.springframework.beans.factory.support.DefaultListableBeanFactory
 		beanFactory.preInstantiateSingletons();
 	}
 

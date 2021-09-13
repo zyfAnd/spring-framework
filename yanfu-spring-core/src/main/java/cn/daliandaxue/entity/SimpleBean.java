@@ -7,6 +7,11 @@ package cn.daliandaxue.entity;
  * @WeChat zyfJava
  */
 public class SimpleBean {
+
+    public SimpleBean() {
+        System.out.println("bean instance . construct .");
+    }
+
     public void send(){
         System.out.println("I ams just simple Bean for sending message ..");
     }
