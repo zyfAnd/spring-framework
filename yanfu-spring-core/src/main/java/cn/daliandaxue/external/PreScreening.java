@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @WeChat zyfJava
  */
 @Component
-public class PreScreening extends NormalPrescreening{
+public class PreScreening extends NormalPrescreening {
     @Override
     public void tieBreak() {
         System.out.println("Tie Break..");
@@ -43,5 +43,10 @@ public class PreScreening extends NormalPrescreening{
     @Override
     public void Dedupe() {
         System.out.println("Dedupe..");
+    }
+
+    @Override
+    public ScenariosCode getScenario() {
+        return ScenariosCode.PRESCREENING;
     }
 }

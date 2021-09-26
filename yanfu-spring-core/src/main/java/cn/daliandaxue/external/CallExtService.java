@@ -1,5 +1,7 @@
 package cn.daliandaxue.external;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @Authour Zhang Yanfu
  * @Date 2021/9/25 11:13 上午
@@ -7,6 +9,7 @@ package cn.daliandaxue.external;
  * @WeChat zyfJava
  */
 public interface CallExtService {
+
 
     void init();
 
@@ -17,5 +20,7 @@ public interface CallExtService {
     void Ness();
     void FME();
     void Dedupe();
+
+    ScenariosCode getScenario();
 
 }

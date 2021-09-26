@@ -44,4 +44,10 @@ public class HKXsellPreScreening extends NormalPrescreening{
     public void Dedupe() {
         System.out.println("HKXsellPreScreening-Dedupe");
     }
+
+    @Override
+    public ScenariosCode getScenario() {
+
+        return ScenariosCode.HKXSell;
+    }
 }

@@ -1,6 +1,8 @@
 package cn.daliandaxue.external;
 
-import jdk.nashorn.internal.codegen.CompilerConstants;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @Authour Zhang Yanfu
@@ -8,9 +10,11 @@ import jdk.nashorn.internal.codegen.CompilerConstants;
  * @Email 1105564280@qq.com
  * @WeChat zyfJava
  */
-
+@Component
 public abstract class NormalPrescreening implements CallExtService {
 
+
+    @PostConstruct
     @Override
     public void init() {
         tieBreak();
@@ -21,5 +25,6 @@ public abstract class NormalPrescreening implements CallExtService {
         CDE();
         Bureau();
     }
+
 
 }
