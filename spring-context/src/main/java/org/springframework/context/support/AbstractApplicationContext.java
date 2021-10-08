@@ -523,6 +523,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 
 			// Tell the subclass to refresh the internal bean factory.
 //			org.springframework.beans.factory.support.DefaultListableBeanFactory@4b44655e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,mainConfig,simpleController,simpleDao,person,myBeanPostProcessor,getSimpleBean]; root of factory hierarchy
+			//1. Bean 资源定位 2. 把 Bean 资源解析成 Bean Definition 3. 把BeanDefinition注入到Spring容器(Map)中
 			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
 
 			// Prepare the bean factory for use in this context.
@@ -611,6 +612,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Initialize any placeholder property sources in the context environment.
+		//空实现
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable:

@@ -530,7 +530,7 @@ public class BeanDefinitionParserDelegate {
 		}
 
 		try {
-			//通过 class 类全限定类名 创建一个 Bean Definition
+			// 创建一个 Bean Definition 把我们的类的类型设置进去
 			AbstractBeanDefinition bd = createBeanDefinition(className, parent);
 
 			parseBeanDefinitionAttributes(ele, beanName, containingBean, bd);

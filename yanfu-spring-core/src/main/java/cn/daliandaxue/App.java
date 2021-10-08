@@ -15,14 +15,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
 	public static void main(String[] args) {
-//		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-//		SimpleBean bean = context.getBean(SimpleBean.class);
-//		bean.send();
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		SimpleBean bean = context.getBean(SimpleBean.class);
+		bean.send();
 		//关闭容器
 //		context.close();
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("cn.daliandaxue");
-		ExtCallFactory factory = context.getBean(ExtCallFactory.class);
-		NormalPrescreening prescreening  =factory.getCallExtService(ScenariosCode.HKXSell);
+//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("cn.daliandaxue");
+//		ExtCallFactory factory = context.getBean(ExtCallFactory.class);
+//		NormalPrescreening prescreening  =factory.getCallExtService(ScenariosCode.HKXSell);
 //		prescreening.init();
 	}
 }
